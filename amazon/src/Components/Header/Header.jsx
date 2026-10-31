@@ -1,5 +1,7 @@
 import React from 'react'
 import classes from './Header.module.css'
+import {Link} from 'react-router-dom'
+// use Link instead of anchor tag to avoid reload everytime we enter another page
 
 import { SlLocationPin } from "react-icons/sl";
 import { BsSearch } from "react-icons/bs";
@@ -15,9 +17,9 @@ function Header() {
         <div className={classes.header__container}>
             {/* logo */}
             <div className={classes.logo__container}>
-                <a href="#">
+                <Link to="/">
                     <img src="https://pngimg.com/uploads/amazon/amazon_PNG25.png" alt="amazon logo" />
-                </a>
+                </Link>
 
                 <div className={classes.delivery}>
                     <span>
@@ -42,29 +44,29 @@ function Header() {
             
 
             <div className={classes.order__container}>
-                <a href="" className={classes.language}>
+                <Link to="" className={classes.language}>
                     <img src="https://pngimg.com/uploads/flags/flags_PNG14592.png" alt="usa flag" />
                     <select>
                         <option value="">ENG</option>
                     </select>
-                </a>
+                </Link>
 
-                <a href="">
+                <Link to="/auth">
                     <div>
                         <p>Hello, sign in</p>
                         <span>Account & Lists</span>
                     </div>
-                </a>
+                </Link>
                 {/* orders */}
-                <a href="">
+                <Link to="/orders">
                     <p>returns</p>
                     <span>& Orders</span>
-                </a>
+                </Link>
                 {/* cart */}
-                <a href='' className={classes.cart}>
+                <Link to='/cart' className={classes.cart}>
                     <BiCart size={35}/>
                     <span>0</span>
-                </a>
+                </Link>
             </div>
         </div>
 
