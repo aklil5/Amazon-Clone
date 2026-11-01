@@ -170,14 +170,47 @@ Pages folder inside src and
 Src folder
     Router.jsx 
 
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import Landing from './Pages/Landing/Landing'
+import SignUp from './Pages/Auth/SignUp'
+import Payment from './Pages/Payment/Payment'
+import Orders from './Pages/Orders/Orders'
+import Cart from './Pages/Cart/Cart'
+
 we need to install react-router-dom
 
-when routing in the Header
+function Routing() {
+  return (
+    <Router>
+        <Routes>
+            <Route path='/' element={<Landing />} />
+            <Route path='/auth' element={<SignUp />}/>
+            <Route path='/payments' element={<Payment />}/>
+            <Route path='/orders' element={<Orders />}/>
+            <Route path='/cart' element={<Cart />}/>
+
+        </Routes>
+    </Router>
+  )
+}
+
+
+when routing in the Header with images or anchor tag (/, /car, /product)
     // use Link insterad of anchor tag to avoid reload everytime we enter another page
 
 
 # 7. Category routing
 
+CategoryCard - Dynamic routing
+
+useParams
+axios
+
+create folder [Api] in [src]
+
+
+- install console ninja extension to see the results of your console beside the code
 
 
 # 8. Detail page routing
@@ -186,7 +219,7 @@ when routing in the Header
 
 
 # 9. Loading functionality integration
-10. Detail page styling and addition of description on single product
+# 10. Detail page styling and addition of description on single product
 11. useReducer Hook and useContextAPI explanation and example
 12. Add to cart functionality
 13. Header sticky part implementation
