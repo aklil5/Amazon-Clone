@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 
 function ProductCard({product}) {
     const {image, title, id, rating, price} = product;
-    console.log(product);
+    // console.log(product);
   return (
     <div className={classes.card__container}>
       <Link to={`/products/${id}`}>

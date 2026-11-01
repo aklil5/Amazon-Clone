@@ -219,8 +219,20 @@ create folder [Api] in [src]
 
 
 # 9. Loading functionality integration
+search for react spinners
+
+add it to
+    Product.jsx - homepage product list
+    Result.jsx - category results page
+    ProductDetail.jsx - single product page
+
+
 # 10. Detail page styling and addition of description on single product
-11. useReducer Hook and useContextAPI explanation and example
+
+
+
+
+# 11. useReducer Hook and useContextAPI explanation and example
 12. Add to cart functionality
 13. Header sticky part implementation
 14. Cart page: Part one
