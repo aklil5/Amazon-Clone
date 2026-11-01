@@ -6,16 +6,19 @@ import { Link } from 'react-router-dom'
 
 // descructure it using product
 
-function ProductCard({product}) {
-    const {image, title, id, rating, price} = product;
-    // console.log(product);
+function ProductCard({product, flex, renderDesc}) {
+    const {image, title, id, rating, price, description} = product;
+    // console.log(product); 
   return (
-    <div className={classes.card__container}>
+    <div className={`${classes.card__container}
+        ${flex?classes.product__flexed : ''}`}
+    >
       <Link to={`/products/${id}`}>
         <img src={image} alt={title} />
       </Link>
       <div>
         <h3>{title}</h3>
+        {renderDesc && <div style={{maxWidth: "750px"}}>{description}</div>}
         <div className={classes.rating}>
             <Rating value={rating?.rate} precision={0.1}/>
             <small>{rating?.count}</small>
@@ -23,10 +26,11 @@ function ProductCard({product}) {
         <div>
             <CurrencyFormat amount={price} />
         </div>
+        <button className={classes.button}>
+            add to cart
+        </button>
       </div>
-      <button className={classes.button}>
-        add to cart
-      </button>
+      
     </div>
   )
 }
